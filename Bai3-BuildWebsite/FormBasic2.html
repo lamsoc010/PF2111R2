@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Học Viên</title>
+    <style>
+        .form {
+            width: 500px;
+            background-color: yellow;
+        }
+        .form-heading {
+            margin: 5px;
+            background-color: rgb(148, 235, 148);
+        }
+        .form-header {
+            margin: 0;
+            color: blue;
+        }
+        .form-signup {
+            margin-left: 5px;
+        }
+        .form-signup > div {
+            margin: 5px 0;
+        }
+        label {
+            display: inline-block;
+            min-width: 100px;
+            color: blue;
+        }
+        .form-signup .form-button {
+            margin-left: 104px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div class="form-heading">
+            <h3 class="form-header">ĐĂNG KÝ HỌC VIÊN</h3>
+        </div>
+        <form action="" class="form-signup">
+            <div class="form-yourname">
+                <label for="yourname">Họ và tên</label>
+                <input type="text" name="yourname" id="yourname">
+            </div>
+            <div class="form-birthday">
+                <label for="birthday">Ngày sinh</label>
+                <input type="text" name="birthday" id="birthday">
+            </div>
+            <div class="form-gender">
+                <label for="gender">Giới tính</label>
+                <input type="radio" name="gender" id="male"> Nam 
+                <input type="radio" name="gender" id="female"> Nữ 
+            </div>
+            <div class="form-address">
+                <label for="address">Địa chỉ</label>
+                <textarea name="address" id="address" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-class">
+                <label for="class">Lớp</label>
+                <select name="class" id="class">
+                    <option value="">---- Chọn lớp ----</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="form-email">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="form-phone">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone">
+            </div>
+            <div class="form-button">
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

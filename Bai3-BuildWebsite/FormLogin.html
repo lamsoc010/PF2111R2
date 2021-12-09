@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 500px;
+        }
+        label {
+            display:  inline-block;
+            min-width: 20%;
+        }
+        input {
+            margin-left: auto;
+        }
+        input[type="submit"] {
+            margin-left: 104px;
+        }
+        div {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="name">
+            <label for="name">Họ và tên: </label> 
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="email">
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="phone">
+            <label for="phone">Số điện thoại: </label>
+            <input type="text" name="phone" id="phone">
+        </div>
+        <div class="gender">
+            <label for="gender">Giới tính: </label>
+            <input type="radio" name="gender" id=""> Nam
+            <input type="radio" name="gender" id=""> Nữ
+        </div>
+        <div class="submit">
+            <input type="submit" value="Đăng Ký">
+        </div>
+    </form>
+</body>
+</html>
