@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi suất ngân hàng</title>
+</head>
+<body>
+    <script>
+        let monney = parseFloat(prompt("Nhập số tiền vay: "));
+        let rate = parseFloat(prompt("Nhập lãi suất: "));
+        let year = parseInt(prompt("NhậP số nam cho vay: ")); 
+
+        let monneyRateInOneYear = monney * rate / 100;
+        let monneyRate = monney + year * monneyRateInOneYear;
+
+        document.write("Số tiền lãi sau khi cho vay "+monney+" VNĐ trong vòng "+year+" năm với lãi suất "+rate+"% là: " + monneyRate);
+    </script>
+</body>
+</html>
