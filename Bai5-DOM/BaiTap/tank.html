@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi xe tăng</title>
+</head>
+<body>
+    <div class="chienTruong">
+        <img src="./image/tank.png" alt="" class="tank" style="position: relative; top: 10px; left: 10px; width: 40px; height: 40px;">
+    </div>
+    <div class="list-button">
+        <button style="margin-top: 300px;" onclick="moveUp()">UP</button>
+        <button onclick="moveDown()">DOWN</button>
+        <button onclick="moveLeft()">LEFT</button>
+        <button onclick="moveRight()">RIGHT</button>
+    </div>
+</body>
+<script>
+    let img = document.querySelector('.tank');
+    function moveUp() {
+        let top = parseInt(img.style.top);
+        img.style.top = (top - 10) +"px";
+    }
+    function moveDown() {
+        let top = parseInt(img.style.top);
+        img.style.top = (top + 10) +"px";
+    }
+    function moveLeft() {
+        let left = parseInt(img.style.left);
+        img.style.left = (left - 10) +"px";
+    }
+    function moveRight() {
+        let left = parseInt(img.style.left);
+        img.style.left = (left + 10) +"px";
+    }
+</script>
+</html>

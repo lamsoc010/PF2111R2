@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập máy tính</title>
+</head>
+<body>
+    <input type="text" id="number1">
+    <input type="text" id="number2"> <br> <br>
+    <button value="add" onclick="calculator(this.value)">Add</button>
+    <button value="sub" onclick="calculator(this.value)">Sub</button>
+    <button value="multi" onclick="calculator(this.value)">Multi</button>
+    <button value="divi" onclick="calculator(this.value)">Divi</button>
+    <br>
+    <p id="result"></p>
+</body>
+<script>
+    function calculator(value) {
+        let a = parseInt(document.querySelector('#number1').value);
+        let b = parseInt(document.querySelector('#number2').value);
+        let result = document.querySelector('#result');
+
+        if(value == "add") {
+            result.innerHTML = `Kết quả là: ` + (a+b);
+        } else if(value == "sub") {
+            result.innerHTML = `Kết quả là: ` + (a-b);
+        } else if(value == "multi") {
+            result.innerHTML = `Kết quả là: ` + (a*b);
+        } else if(value == "divi") {
+            result.innerHTML = `Kết quả là: ` + (a/b);
+        }
+    }
+</script>
+</html>

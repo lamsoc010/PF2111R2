@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViếT thư</title>
-</head>
-<body>
+  </head>
+  <body>
     <p>Nhập thông tin người nhận</p>
-    <input type="text" id="name">
-    <input type="text" id="address">
-    <input type="text" id="date">
+    <input type="text" id="name" />
+    <input type="text" id="address" />
+    <input type="text" id="date" />
 
     <button onclick="taoThu()">Tạo thư</button>
-    <br>
-    <br>
+    <br />
+    <br />
     <p class="letter"></p>
     <script>
-        function taoThu() {
-            let name = document.querySelector('#name').value;
-            let address = document.querySelector('#address').value;
-            let date = document.querySelector('#date').value;
-    
-            let letter = document.querySelector('.letter'); 
-            letter.innerHTML = `${name} thương nhớ, <br>
+      function taoThu() {
+        let name = document.querySelector("#name").value;
+        let address = document.querySelector("#address").value;
+        let date = document.querySelector("#date").value;
+
+        let letter = document.querySelector(".letter");
+        letter.innerHTML = `${name} thương nhớ, <br>
     
     Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn. <br>
     
@@ -32,8 +32,7 @@
     Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều. <br>
     
     ${address}, ${date}”`;
-
-        }
+      }
     </script>
-</body>
+  </body>
 </html>

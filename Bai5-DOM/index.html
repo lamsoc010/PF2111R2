@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị đầu ra</title>
+</head>
+<body>
+    Số a: <input type="text" id="soA"> <br>
+    Số b: <input type="text" id="soB"> <br>
+    <p id="result">Kết quả: </p>
+    <button id="cong" onclick="tinhTong()">Tổng</button>
+    <script>
+        function tinhTong() {
+            var soA = document.getElementById('soA');
+            var soB = document.getElementById('soB');
+            var result = document.getElementById('result');
+            result.innerText = "Kết quả: " + (parseFloat(soA.value) + parseFloat(soB.value));
+        }
+
+    </script>
+</body>
+</html>

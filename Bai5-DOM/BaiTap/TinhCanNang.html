@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số BMI</title>
+</head>
+<body>
+    Nhập cân nặng  <input type="text" id="weight"> <br>
+    Nhập chiều cao <input type="text" id="height"> <br>
+    <button onclick=BMI()>Kết quả</button>
+    <p id="result"></p>
+</body>
+<script>
+    function BMI() {
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var BMI = weight / (height * height);
+        var result = "";
+        if(BMI < 16) {
+            result = "Gầy cấp độ III"
+        } else if(BMI < 17) {
+            result = "Gầy cấp độ II"
+        } else if(BMI < 18.5) {
+            result = "Gầy cấP độ I"
+        } else if(BMI < 25) {
+            result = "Bình thường"
+        } else if(BMI < 30) {
+            result = "Thừa cân"
+        } else if(BMI < 35) {
+            result = "Béo phì độ I"
+        } else if(BMI < 40){
+            result = "Béo phì độ II"
+        } else {
+            result = "Béo phì độ III"
+        }
+        console.log(BMI);
+        document.getElementById("result").innerHTML = `<h1>${result}</h1>`
+    }
+</script>
+</html>

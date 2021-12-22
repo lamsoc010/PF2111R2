@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demoOnChange</title>
+</head>
+<body>
+    <!-- Cách 1 -->
+    <select name="" Id="address" onchange= "changeAddress()">
+        <option value="HN">Hà Nội</option>
+        <option value="HUE">Huế</option>
+        <option value="DN">Đà Nẵng</option>
+        <option value="HCM">Tp HCM</option>
+    </select>
+    <p id="showAddress"></p>
+    <!-- Cách 2 -->
+    <select name="" Id="phone">
+        <option value="Mobi">Mobiphone</option>
+        <option value="Viettel">Viettel</option>
+        <option value="Vina">Vina</option>
+    </select>
+    <p id="showPhone"></p>
+
+    <script>
+        // Cách 1: dùng onchange
+        function changeAddress() {
+            var address = document.getElementById('address');
+            var showAddress = document.getElementById('showAddress');
+            showAddress.innerHTML = address.value;
+        }
+        // Cách 2: dùng addEventListener
+        function changePhone() {
+            var phone = document.getElementById('phone');
+            var showPhone = document.getElementById('showPhone');
+            showPhone.innerHTML = `<h1>${phone.value}</h1>`;
+        }
+        phone.addEventListener("change", changePhone)
+    </script>
+</body>
+</html>

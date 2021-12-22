@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi tiền</title>
+</head>
+<body>
+    Amount <input type="text" id="amount"> <br>
+    From Currenct <select name="fromCurrency" id="fromCurrency">
+        <option value="vn">VietNam</option>
+        <option value="usa">My</option>
+    </select> <br>
+    To Currenct <select name="toCurrency" id="toCurrency">
+        <option value="vn">VietNam</option>
+        <option value="usa">My</option>
+    </select> <br>
+    <button onclick="changeMoney()">Convert</button>
+    <p id="result"></p>
+</body>
+<script>
+    function changeMoney() {
+        let amount = parseFloat(document.querySelector('#amount').value);
+        let fromCurr = document.querySelector('#fromCurrency').value;
+        let toCurr = document.querySelector('#toCurrency').value;
+        let change;
+        let result = document.querySelector('#result');
+
+        // Trường hợp đổi từ tiền VN
+        if(fromCurr == "vn" && toCurr == "usa") {
+            change = amount / 23000;
+        } else if(fromCurr == "vn" && toCurr == "vn") {
+            change = amount;
+        }
+
+        // Trường hợp đỔi từ Mỹ
+        if(fromCurr == "usa" && toCurr == "vn") {
+            change = amount * 23000;
+        } else if(fromCurr == "usa" && toCurr == "usa") {
+            change = amount;
+        }
+        result.innerHTML = `${amount} đổi từ ${fromCurr} sang ${toCurr} là: ${change}`;
+        // result.innerHTML = amount;
+    }
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+</head>
+<body>
+    <h1>Giá hoa quả</h1>
+    <input type="text" id="fruit"> 
+    <button onclick="price()">Xem giá</button>
+    <p id="result"></p>
+</body>
+<script>
+    function price() {
+        var fruit = document.querySelector('#fruit').value;
+        var result = document.querySelector('#result');
+        fruit = fruit.toLowerCase();
+        switch(fruit) {
+            case "ổi":
+            case "dưa hấu": {
+                result.innerHTML = `Giá của ${fruit} là 20000 VNĐ/kg `;
+                break;
+            }
+            case "táo":
+            case "xoài": {
+                result.innerHTML = `Giá của ${fruit} là 30000 VNĐ/kg `;
+                break;
+            }
+            case "cam":
+            case "chôm chôm": {
+                result.innerHTML = `Giá của ${fruit} là 40000 VNĐ/kg `;
+                break;
+            }
+            case "măng cụt": {
+                result.innerHTML = `Giá của ${fruit} là 50000 VNĐ/kg `;
+                break;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm ĐH khối D</title>
+</head>
+<body>
+    Môn toán <input type="text" id="math"> <br>
+    Môn văn  <input type="text" id="liter"> <br>
+    Môn Anh <input type="text" id="english"> <br>
+    Khu vực <select name="" id="area"> <br>
+        <option value="KV1">KV1</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV2">KV2</option>
+        <option value="KV3">KV3</option>
+    </select>
+    <button onclick="scroreUni()">Tính điểm</button>
+    <p id="result"></p>
+</body>
+<script>
+    function scroreUni() {
+        let math = parseFloat(document.querySelector('#math').value);
+        let liter = parseFloat(document.querySelector('#liter').value);
+        let english = parseFloat(document.querySelector('#english').value);
+        let area = document.querySelector('#area').value;
+        let result = document.querySelector('#result');
+        let score = math + liter + english;
+        console.log(score)
+        switch(area) {
+            case "KV1": {
+                result.innerHTML = `Tổng điểm ĐH Khối D của bạn là: ${score + 0.75}`
+                break;
+            } 
+            case "KV2-NT": {
+                result.innerHTML = `Tổng điểm ĐH Khối D của bạn là: ${score + 0.5}`
+                break;
+            }
+            case "KV2": {
+                result.innerHTML = `Tổng điểm ĐH Khối D của bạn là: ${score + 0.25}`
+                break;
+            }
+            case "KV3": {
+                result.innerHTML = `Tổng điểm ĐH Khối D của bạn là: ${score}`
+                break;
+            }
+        }
+    }
+</script>
+</html>

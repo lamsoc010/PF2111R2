@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lấy giá trị ở input và hiển thị ra</title>
+</head>
+<body>
+    <input type="text" class="message">
+    <p id="showInput1"></p>
+    <p id="showInput2"></p>
+    <button onclick="getMessage()">Lấy giá trị cách 1</button>
+    <button  id="button">Lấy giá trị cách 2</button>
+    <script>
+        // Cách 1: dùng onclick
+        function getMessage() {
+            var message = document.querySelector('.message');
+            var show = document.querySelector('#showInput1');
+            show.innerText = message.value;
+        }
+        //  Cách 2: dùng addEventListener
+        function getMessage1() {
+            var message = document.querySelector('.message');
+            var show = document.querySelector('#showInput2');
+            show.innerHTML= message.value;
+        }
+        var button = document.querySelector('#button')
+        button.addEventListener("click", getMessage1);
+    </script>
+</body>
+</html>
