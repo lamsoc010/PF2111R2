@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi kép ngân hàng</title>
+</head>
+<body>
+    Tiền Gửi
+    <input type="text" id="monney"> <br>
+    Kỳ hạn(tháng)
+    <input type="text" id="month"> <br>
+    <button onclick="tinhLaiSuat()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function tinhLaiSuat() {
+            let monney = +document.getElementById('monney').value;
+            let month = +document.getElementById('month').value;
+            let result = document.getElementById('result');
+
+            let rate = 0.6;
+            let interest = 0;
+            for(let i = 1; i <= month; i++) {
+                interest = (monney * rate / 100);
+                monney += interest;
+            }
+            result.innerHTML = `Tổng tiền sau lãi: ${monney} `
+        }
+    </script>
+</body>
+</html>

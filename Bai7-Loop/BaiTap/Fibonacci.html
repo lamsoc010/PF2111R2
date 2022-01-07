@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>In dãy fibonacci</title>
 </head>
 <body>
-    
+    <script>
+        var n = +prompt("Nhập số: ");
+        console.log(typeof n);
+        for(var i = 1; i <= n; i++) {
+            if(i == 1 || i == 2) {
+                console.log(1);
+            } else {
+                console.log((i-2)+(i-1));
+            }
+        }
+    </script>
 </body>
 </html>

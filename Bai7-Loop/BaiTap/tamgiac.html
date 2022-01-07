@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ tam giác</title>
+</head>
+<body>
+    <script>
+        let n  = +prompt("Nhập độ dài tam giác:");
+        // for(let i = 1; i <= n; i++) {
+        //     for(let j = 1; j <= i; j++) {
+        //         document.writeln(" * ")
+        //     }
+        //     document.writeln("<br>")
+        // }
+
+        // for(let i = n; i >= 1; i--) {
+        //     for(let j = 1; j <= i; j++) {
+        //         document.writeln(" * ")
+        //     }
+        //     document.writeln("<br>")
+        // }
+
+        // for(let i = n; i >= 1; i--) {
+        //     for(let j = 1; j <= i - 1; j++) {
+        //         document.writeln("&nbsp;");
+        //     }
+        //     document.writeln(" * ")
+        //     document.writeln("<br>")
+        // }
+
+        for(let i = 1; i <= n; i++) {
+            for(k = 1; k <= n; k++) {
+                document.writeln("&nbsp;")
+            }
+            for(j = 1; j <= n; j++) {
+                document.writeln("*");
+            }
+            document.writeln("<br>")
+        }
+
+
+
+    </script>
+</body>
+</html>
