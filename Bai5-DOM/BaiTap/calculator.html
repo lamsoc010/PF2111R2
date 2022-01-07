@@ -7,14 +7,17 @@
     <title>Bài tập máy tính</title>
 </head>
 <body>
-    <input type="text" id="number1">
-    <input type="text" id="number2"> <br> <br>
+    <form > 
+        <input type="text" id="number1">
+        <input type="text" id="number2"> <br> <br>
+        <br>
+        <p id="result"></p>
+        
+    </form>
     <button value="add" onclick="calculator(this.value)">Add</button>
     <button value="sub" onclick="calculator(this.value)">Sub</button>
     <button value="multi" onclick="calculator(this.value)">Multi</button>
     <button value="divi" onclick="calculator(this.value)">Divi</button>
-    <br>
-    <p id="result"></p>
 </body>
 <script>
     function calculator(value) {

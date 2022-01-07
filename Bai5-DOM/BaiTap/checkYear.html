@@ -18,14 +18,16 @@
         let year = parseInt(document.querySelector('#year').value);
         let result = document.querySelector('#result');
 
+        let isLeapYear = false;
         if(year % 4 == 0) {
-            if(year % 100 != 0) {
-                result.innerHTML = `Năm ${year} là năm nhuận`;
-            } else if(year % 400 != 0) {
-                result.innerHTML = `Năm ${year} là năm không nhuận`;
-            } else {
-                result.innerHTML = `Năm ${year} là năm nhuận`;
+            if(year % 100 == 0) {
+                if(year % 400 == 0) {
+                    isLeapYear = true;
+                }
             }
+        }
+        if(isLeapYear == true) {
+            result.innerHTML = `Năm ${year} là năm nhuận`;
         } else {
             result.innerHTML = `Năm ${year} là năm không nhuận`;
         }

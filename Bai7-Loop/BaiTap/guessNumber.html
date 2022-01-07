@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+<body>
+    <div id="afterStart">
+        Nhập khoảng số bạn muốn đoán:
+        <input type="text" id="maxNumber"> <br>
+        <button onclick="ramdom()">Bắt đầu</button>
+    </div>
+    
+    <script>
+        function ramdom() {
+            let result = document.querySelector('#result');
+            let maxNumber = parseInt(document.getElementById('maxNumber').value);
+            ramdomNumber = Math.floor(Math.random() * (maxNumber + 1));
+            console.log(ramdomNumber);
+            let turn = 3;
+            let guessNumber;
+            guessNumber = +prompt("Mời bạn nhập số muốn đoán: ");
+            do {
+                if(guessNumber > ramdomNumber) {
+                    turn--;
+                    guessNumber = +prompt(`Số bạn đoán lớn hơn, số lượt còn lại ${turn}: `);
+                } else if(guessNumber < ramdomNumber) {
+                    turn--;
+                    guessNumber = +prompt(`Số bạn đoán nhỏ hơn, số lượt còn lại ${turn}: `);
+                } else {
+                    alert("Chúc mừng bạn đã đoán đúng!");
+                    break;
+                } 
+            } while (turn != 1);
+        }
+        
+    </script>
+</body>
+</html>

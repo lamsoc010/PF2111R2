@@ -1,0 +1,43 @@
+<!-- Víe chương trình đầu voà 3 điểm Toán Lý Hoá 
+Yêu cầu phân loại học sinh theo tiêu chí sau:
+DTB >= 8 : HSG
+DTB từ 6.5 đến 7.9: HSK
+DTB < 6.5: HS Yếu-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp hạng học sinh</title>
+</head>
+<body>
+    Điểm Toán:
+    <input type="text" id="math"> <br>
+    Điểm Lý:
+    <input type="text" id="physics"> <br>
+    Điểm Hoá:
+    <input type="text" id="chemistry"> <br>
+    <button onclick="check()">Xem kết quả</button>
+    <p id="result"></p>
+
+    <script>
+        function check() {
+            let math = parseFloat(document.getElementById("math").value);
+            let physics = parseFloat(document.getElementById("physics").value);
+            let chemistry = parseFloat(document.getElementById("chemistry").value); 
+            let result = document.getElementById("result");
+
+            let average = (math + physics + chemistry) / 3;
+            console.log(average);
+            if(average >= 8) {
+                result.innerHTML = "HSG";
+            } else if (average >= 6.5) {
+                result.innerHTML = "HSTT";
+            } else {
+                result.innerHTML = "HSY";
+            }
+        }
+    </script>
+</body>
+</html>

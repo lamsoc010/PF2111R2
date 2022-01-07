@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo If Else</title>
+</head>
+<body>
+    Nhập vào só bất kì
+    <input type="text" id="number">
+    <button onclick=checkNumber()>Kiểm tra</button>
+    <p id="result"></p>
+
+    <br> <br>
+    NhậP vào tên của bạn
+    <input type="text" id="name">
+    <button onclick=checkName()>Kiểm tra</button>
+    <p id="output"></p>
+</body>
+<script>
+    function checkNumber() {
+        var number = parseInt(document.getElementById("number").value);
+        console.log(number);
+        var result = document.getElementById('result');
+        var string = "";
+        if(number > 5) 
+            string = `${number} > 5`;
+        else if(number == 5) 
+            string = `${number} = 5`;
+        else 
+            string = `${number} < 5`;
+
+        if(number > 0) {
+            if(number % 2 == 0)
+                string += " và là số dương chẵn";
+            else
+                string += " và là số dương lẻ";
+        } else {
+            if(number % 2 == 0)
+                string += " và là số âm chẵn";
+            else
+                string += " và là số âm lẻ";
+        }
+
+        result.innerHTML = string;
+
+    }
+
+    function checkName() {
+        var name = document.getElementById('name').value;
+        var output = document.getElementById('output');
+
+        if(name == '') {
+            output.innerHTML = "Tên không được để trống!";
+        } else {
+            output.innerHTML = `Tên của bạn là: ${name}`
+        }
+    }
+</script>
+</html>
