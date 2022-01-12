@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+    Sample Screen
+    <input type="text" id="number">
+    <button>Add</button>
+    <button onclick="display()">Display</button>
+    <p id="result"></p>
+    <script>
+        let arrays = [];
+        function display() {
+            let number = document.getElementById("number").value;
+            let result = document.querySelector('#result');
+            let htmls = `<hr>`;
+            arrays.push(number);
+            for (let i = 0; i < arrays.length; i++) {
+                htmls += `Element ${i} = ${arrays[i]} <br>`;
+            }
+            result.innerHTML = htmls;
+        }
+    </script>
+</body>
+</html>

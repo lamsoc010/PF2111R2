@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị lớn nhất và nhỏ nhất trong mảng</title>
+</head>
+<body>
+    <script>
+        var nums = [];
+        for(let i=0; i<100; ++i){
+            nums[i] = Math.floor(Math.random() * 101);
+        }
+
+        function findMin(nums) {
+            let min = nums[0];
+            for(let i in nums) {
+                if(nums[i] < min) {
+                    min = nums[i];
+                }
+            }
+            return min;
+        }
+
+        function findMax(nums) {
+            let max = nums[0];
+            for(let i in nums) {
+                if(nums[i] > max) {
+                    max = nums[i];
+                }
+            }
+            return max;
+        }
+        for(let i of nums) {
+            document.writeln(i);
+        }
+
+        document.write('<br>');
+        document.write(`Giá trị nhỏ nhất ${findMin(nums)}`);
+        document.write('<br>');
+        document.write(`Giá trị lớn nhất ${findMax(nums)}`);
+    </script>
+</body>
+</html>

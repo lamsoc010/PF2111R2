@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let names = ['Duyên','Vũ','Sang','Yến','Thông','Linh','Lâm','Lãm'];
+        // names.push("ABC")
+        // for (const name of names) {
+        //     console.log(name);
+            
+        // }
+        // names.forEach(function(name, index, array) { 
+        //     console.log(`${index} : ${name}`);
+        //     // console.log(array)
+        // })
+        
+        let htmls = names.map(function(name, index, array) {
+            return `<li>${index} : ${name}</li>`;
+        })
+        console.log(htmls.join(''));
+
+        let check = names.filter(function (name) {
+            return name.includes("L");
+        })
+        console.log(check);
+    </script>
+</body>
+</html>
