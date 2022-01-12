@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khachs sạn CM</title>
+</head>
+<body>
+    <script>
+        var input = [
+            [1, 2, 5, 5],
+            [0, 2, 3, 1],
+            [1, 0, 2, 9],
+            [3, 9, 0, 5]
+        ];
+        // Tổng = 1 + 2 + 2 + 2 + 3 +5 + 5+ 9+ 1+ 5 
+        let result = 0;
+        for(let i = 0; i < input.length; i++) {
+            for(let j = 0; j < input[i].length; j++) {
+                result += input[i][j];
+                if(input[i][j] == 0) {
+                    for(let k = i+1; k < input[i].length; k++) {
+                        result -= input[k][j];
+                    }
+                }
+            }
+        }    
+        console.log(result);
+    </script>
+</body>
+</html>
