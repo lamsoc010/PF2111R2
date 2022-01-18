@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiểM tra đối xứng</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(s) {
+            let arrs = [];
+            arrs = s.split('');
+            for(let i = 0; i < arrs.length ; i++) {
+                if(arrs[i] != arrs[arrs.length - i- 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isPalindrome('odado'))
+        
+    </script>
+</body>
+</html>

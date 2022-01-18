@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng quản lý sản phẩm</title>
+  </head>
+  <body>
+    <h2>Add new Product</h2>
+    <input type="text" id="newProduct" />
+    <button onclick="addProduct()">Add</button>
+    <br />
+    <h2>Display All Product</h2>
+    <table id="tableProduct"></table>
+
+    <script>
+        let products = ["Sony Xperia", "Samsung Galaxy"];
+        function showProducts() {
+            let table = document.getElementById("tableProduct");
+            let htmls = `<td>Product Name</td>
+                <td></td>
+                <td>${products.length} products</td>`;
+            for (let i = 0; i < products.length; i++) {
+            htmls += `<tr>
+                <td>${products[i]}</td>
+                <td><button onclick="editProduct('${products[i]}')">Edit</button></td>
+                <td><button onclick="deleteProduct('${products[i]}')">Delete</button></td>
+                </tr>`;
+            }
+            table.innerHTML = htmls;
+        }
+        showProducts();
+        function addProduct() {
+            let newProduct = document.getElementById("newProduct").value;
+            products.push(newProduct);
+            showProducts();
+        }
+
+        function deleteProduct(product) {
+            let pos = products.indexOf(product);
+            products.splice(pos, 1);
+            showProducts();
+        }
+        
+        function editProduct(product) {
+            let s = prompt("Nhập tên muốn sửa: ");
+            let pos = products.indexOf(product);
+            products[pos] = s;
+            showProducts();
+        }
+    </script>
+  </body>
+</html>

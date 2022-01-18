@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game caro 3 cột</title>
+    <style>
+        table {
+            width: 300px;
+            height: 300px;
+            border-collapse: collapse;
+        }
+        tr, td {
+            border :  1px solid black;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <table id="game-board" >
+
+    </table>
+    <!-- <button id="undo" onclick="undo()"></button> -->
+    <script>
+        let arr = [];
+        let player = 1;
+        function drawGame() {
+            let htmls = ``;
+            for(let i = 0; i < 3; i++) {
+                arr[i] = [];
+                htmls += `<tr>`;
+                for(let j = 0; j < 3; j++) {
+                    arr[i][j] = '*'
+                    htmls += `<td id = "cell-${i}-${j}" onclick="play(${i}, ${j})"></td>`
+                } 
+                htmls += `</tr>`;
+                
+            }
+            document.getElementById('game-board').innerHTML = htmls;
+        }
+        drawGame();
+        function play(i , j) {
+            if(player == 1) {
+                document.getElementById(`cell-${i}-${j}`).innerHTML = "X";
+                arr[i][j] = "X";
+                checkWin();
+                player = 2;
+            } else {
+                document.getElementById(`cell-${i}-${j}`).innerHTML = "O";
+                arr[i][j] = "O";
+                checkWin();
+                player = 1;
+            }
+            // console.log(arr)
+            // arr[i][j]
+        }
+        function checkWin() {
+            for(let i = 0; i < arr.length; i++) {
+                for(let j = 0; j < arr.length; j++) {
+                    if(arr[i][j] != "*" && arr[i][j] == arr[i][j+1] && arr[i][j] == arr[i][j+2]) {
+                        drawGame();
+                        console.log(`${player} win`)
+                    }
+                    // if(arr[i][j] != "*" && arr[i][j] == arr[i+1][j] && arr[i][j] == arr[i+2][j]) {
+                    //     console.log(`${player} winmm`)
+                    // }
+                    // if(arr[i][j] != "*" && arr[i][j] == arr[i+1][j+1] && arr[i][j] == arr[i+2][j+2]) {
+                    //     console.log(`${player} win`)
+                    // }
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>

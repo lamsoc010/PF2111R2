@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm giá trị nhỏ nhất</title>
+  </head>
+  <body>
+    <script>
+        function findMin(arrs) {
+            let min = arrs[0];
+            for(let arr of arrs) {
+                if(arr < min) {
+                    min = arr;
+                }
+            }
+            return min;
+        }
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2= [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [0, 0, 0, 0, 0, 0];
+
+        console.log(findMin(arr1));
+        console.log(findMin(arr2));
+        console.log(findMin(arr3));
+    </script>
+  </body>
+</html>

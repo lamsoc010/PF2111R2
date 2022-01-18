@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuyệN tậP hàm</title>
+</head>
+<body>
+    <script>
+        // Bài 1: 
+        function sum(num1, num2) {
+            if(num1 > num2) {
+                alert("Số thứ 1 lớn hơn số thứ 2")
+            } else {
+                return num1 + num2;
+            }
+        }
+        // Bài 2: 
+        let starts = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let chomSao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function checkStart(start) {
+            let pos;
+            for(let s of starts) {
+                if(s == start) {
+                    pos = starts.indexOf(s);
+                }             
+            }
+            return chomSao[pos];
+        }
+        console.log(checkStart("Polaris"))
+        // Bài 3
+        function square(number) {
+            return number * number;
+        }
+        console.log(square(5));
+        // Bài 4
+        function sCircle(r) {
+            return Math.PI * r * r;
+        }
+        function cCircle(r) {
+            return 2* Math.PI * r;
+        }
+        console.log(sCircle(2))
+        // Bài 5
+        function factorial(number) {
+            let result = 1;
+            for(let i = 1; i <= number; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        console.log(factorial(5))
+        // Bài 6
+        function checkNumber(number) {
+            return typeof number == 'number';
+        }
+        console.log(checkNumber(5));
+        // Bài 7
+        function findMax(a, b, c) {
+            let max = a;
+            if(b >= max && b >= c) {
+                max = b;
+            } else if(c >= max){
+                max = c;
+            }
+            return max;
+        }
+        console.log(findMax(5,7,0))
+        // Bài 8
+        function checkIntegerNumber(number) {
+            return Number.isInteger(number) && number > 0;
+        } 
+        console.log(checkIntegerNumber(-2))
+        // Bài 9
+        function reverse(arrs) {
+            return arrs.reverse();
+        }
+        let arrs = [2,2,3,4,5];
+        console.log(reverse(arrs));
+        // Bài 10
+        function findValue(arrs, s) {
+            let dem = 0;
+            for(let i in arrs) {
+                if(arrs[i] == s) {
+                    dem += 1;
+                }
+            }
+            if(dem != 0) {
+                return dem;
+            } else {
+                return -1;
+            }
+        }
+        
+        console.log(findValue(arrs, 6))
+    </script>
+</body>
+</html>

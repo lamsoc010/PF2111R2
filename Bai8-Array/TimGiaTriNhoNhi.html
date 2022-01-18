@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhì trong mảng</title>
+</head>
+<body>
+    <script>
+        let arrays = [-1,-2,1,4,5,2,7];
+        
+        // Cách 1: Sắp xếP lại mảng
+        for(let i = 0; i < arrays.length; i++) {
+            for(let j = 0; j < arrays.length; j++) {
+                if(arrays[i] < arrays[j]) {
+                    let temp = arrays[i];
+                    arrays[i] = arrays[j];
+                    arrays[j] = temp;
+                 }
+            }
+ 
+        }
+        // arrays.sort(); soft thì nó sẽ không sắp xếP đƯợc số âm
+        // console.log(arrays);
+        console.log(`Phần tử nhỏ nhì trong mảng: ${arrays[1]}` )
+        // Cách 2: 
+    </script>
+</body>
+</html>
