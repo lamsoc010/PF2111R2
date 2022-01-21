@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số bị thiếU trong mảng từ 1 đến 10</title>
+</head>
+<body>
+    <script>
+        let arrs = [0,1,2,3,4,5,6,8,9,10];
+
+        function find(arrs) {
+            let arrays = [];
+            for (let i = 0; i <= 10; i++) {
+                if(arrs.indexOf(i) == -1) {
+                    arrays.push(i);
+                }
+            }
+            return arrays;
+        }
+        console.log(find(arrs));
+    </script>
+</body>
+</html>

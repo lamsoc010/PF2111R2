@@ -10,7 +10,7 @@
     <input type="text" id="toValue">
     <select id="change"> 
         <option value="meter">meter</option>
-        <option value="foot">foot</option>
+        <option value="feet">feet</option>
     </select>
     <input type="text" id="fromValue">
     <button onclick="change()">Chuyển</button>
@@ -22,20 +22,20 @@
             let change = document.getElementById("change").value;
             console.log(change);
             if(change == "meter") {
-                fromValue.value = meterToFoot(toValue);
-            } else if(change == "foot") {
-                fromValue.value = footToMeter(toValue);
+                fromValue.value = meterTofeet(toValue);
+            } else if(change == "feet") {
+                fromValue.value = feetToMeter(toValue);
             }
         }
 
-        function footToMeter(foot) {
-            let meter = 0.305 * foot;
+        function feetToMeter(feet) {
+            let meter = 0.305 * feet;
             return meter;
         }
 
-        function meterToFoot(meter) {
-            let foot = 3.279 * meter;
-            return foot;
+        function meterTofeet(meter) {
+            let feet = 3.279 * meter;
+            return feet;
         }
     </script>
 </body>
