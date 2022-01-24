@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm âm lịch từ năm dương lịch</title>
+</head>
+<body>
+    <script>
+        let year = + prompt("Nhập năm dương lịch");
+        let arrCans = ['Canh','Tân','Nhâm','Quý','Giáp','Ất','Bính','Đinh','Mậu','Kỷ'];
+        let arrChis = ['Thân','Dậu','Tuất','Hợi','Tý','Sửu','Dần','Mẹo','Thìn','Tỵ','Ngọ','Mùi'];
+
+        let can = year % 10;
+        let chi = year % 12;
+        alert(`${arrCans[can]} ${arrChis[chi]}`);
+    </script>
+</body>
+</html>
