@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tậP luyệN tậP</title>
+</head>
+<body>
+    <script>
+        // <!-- Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành. -->
+        for(let i = 0; i <= 100; i++) {
+            if(i == 99) {
+                alert("Thành công");
+            }
+        }
+        // Bài 2:
+        let nhietDo = + prompt("Nhập nhiệT độ");
+        if(nhietDo > 100) {
+            alert("Giảm nhiệT độ");
+        } else if(nhietDo < 20) {
+            alert("Tăng nhiệT độ");
+        }
+        // Bài 3:Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        function fibonacci(n) {
+            if(n == 1 || n == 2) { 
+                return 1;
+            } 
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        for(let i = 1; i <= 20; i++) {
+            console.log(fibonacci(i));
+        }
+        // Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+        for(let i = 1; i <= 100; i++) {
+            if(fibonacci(i) % 5 == 0) {
+                console.log(fibonacci(i));
+                break;
+            }
+        }
+        // Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        let sum = 0;
+        for(let i = 1; i <= 20; i++) {
+            sum += fibonacci(i);
+        }
+        console.log(sum);
+        // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        let sum7 = 0;
+        let dem = 0;
+        for(let i = 1; i <= 100; i++) {
+            if(dem == 30) {
+                break;
+            }
+            if(i % 7 == 0) {
+                dem += 1;
+                sum7 += i;
+            }
+        }
+        console.log(sum7);
+        // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra “Fizz”, 5 thì in ra “Buzz” thay vì in ra số đó. 
+        // Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ “FizzBuzz”.
+        for(let i = 1; i <= 100; i++) {
+            if(i % 3 == 0 && i % 5 == 0) {
+                console.log("FizzBuzz");
+                continue;
+            } else if(i % 3 == 0) {
+                console.log("Fizz");
+                continue;
+            } else if(i % 5 == 0) {
+                console.log("Buzz");
+                continue;
+            }
+            console.log(i)
+        }
+    </script>
+    
+</body>
+</html>

@@ -9,14 +9,15 @@
 <body>
     <script>
         var n = +prompt("Nhập số: ");
-        console.log(typeof n);
-        for(var i = 1; i <= n; i++) {
-            if(i == 1 || i == 2) {
-                console.log(1);
-            } else {
-                console.log((i-2)+(i-1));
-            }
+        
+        function fibonacci(n) {
+            if(n == 1 || n == 2) { 
+                return 1;
+            } 
+            return fibonacci(n - 1) + fibonacci(n - 2);
         }
+
+        console.log(fibonacci(n));
     </script>
 </body>
 </html>
