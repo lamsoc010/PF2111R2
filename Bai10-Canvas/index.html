@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid black"></canvas>
+    <script>
+        let xCircle = 50, yCircle = 50;
+        let xRect = 100, yRect = 370;
+        let radiusCircle = 20;
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        function drawCirle(xCircle, yCircle) {
+            // Bắt đầu vẽ;
+            ctx.beginPath();
+            // arc vẽ hình tròn(cách gốc toạ độ theo x, theo y, bán kính, 0, Pi*2 )
+            ctx.arc(xCircle, yCircle, radiusCircle, 0, Math.PI * 2);
+            // fillStyle và fill để đổ màu
+            ctx.fillStyle = 'red';
+            ctx.fill();
+        }
+        drawCirle(xCircle, yCircle);
+
+        function drawRect(x, y, w, h) {
+            ctx.beginPath();
+            // rect vẽ hình chữ nhật(theo x, theo y, chiều dài, chiềU rộng);
+            ctx.rect(x, y, w, h);
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+        }
+        // drawRect();
+        function drawString() {
+            ctx.beginPath();
+            ctx.font = "40px Arial";
+            // Chú ý là fillStyle đổi màu phải trước fillText
+            ctx.fillStyle = 'pink';
+            ctx.fillText("Hello world", 100, 300);
+        }
+        // drawString();
+        var check = 1;
+        // cách 1:
+        function autoMoveCircle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if(check == 1) {
+                if(xCircle + radiusCircle < canvas.width) {
+                    xCircle += 5;
+                    drawCirle(xCircle, yCircle);
+                } else {
+                    check = 2;
+                }
+            }
+            console.log(check)
+            if(check == 2) {
+                if(radiusCircle == xCircle) {
+                    check = 1;
+                } else {
+                    xCircle -= 5;
+                    drawCirle(xCircle, yCircle);
+                }
+            }
+        }
+        // cách 2: 
+        var direction = 'down';
+        function autoMoveCircle2() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawRect(xRect, yRect, 100, 20);
+            if(yCircle + radiusCircle >= canvas.height) {
+                direction = 'up';
+            } else if(yCircle == radiusCircle) {
+                direction = 'down';
+            }
+
+            switch(direction) {
+                case 'up': 
+                    yCircle -= 5;
+                    break;
+                case 'down': 
+                    yCircle +=5;
+                    break;
+            }
+            drawCirle(xCircle, yCircle);
+        }
+
+        setInterval(autoMoveCircle2, 50);
+        window.addEventListener('keydown', function(e) {
+            
+            switch(e.keyCode) {
+                case 37: {
+                    if(xRect )
+                    xRect -= 5;
+                    break;
+                }
+                case 39: {
+                    xRect += 5;
+                    break;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

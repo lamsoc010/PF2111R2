@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <canvas id="myCanvas" width="400px" height="400px" style="border: 1px solid black"></canvas>> -->
+
+</body>
+    <script src="circle.js"></script>
+    <script src="student.js"></script>
+    <script>
+
+        // let n = +prompt("Nhập số hình tròn muốn nhậP");
+        // for(let i = 0; i < n; i++) {
+            // let radius = +prompt("Nhập bán kính");
+            // let color = prompt("Nhập màu");
+            let circle = new Circle(10, 'red');
+            // circle.drawCircle();
+        // }
+
+        document.write(circle.getRadius() + '<br>' + circle.getArea());
+
+
+
+        // console.log(circle);
+        // console.log(`Bán kính hình tròn là: ` + circle.getRadius());
+        // console.log(`Diện tích hình tròn là: ` + circle.getArea());
+    </script>
+</html>

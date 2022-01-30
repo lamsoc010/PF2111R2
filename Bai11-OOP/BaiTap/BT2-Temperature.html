@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyen doi nhiet do</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor(c) {
+                this.c = c;
+            }
+
+            changeToF() {
+                return 9/5 * this.c + 32;
+            }
+
+            changeToK() {
+                return this.c + 273.15;
+            }
+        }
+
+        let temp = new Temperature(25);
+        console.log(temp.changeToF());
+        console.log(temp.changeToK());
+    </script>
+</body>
+</html>
