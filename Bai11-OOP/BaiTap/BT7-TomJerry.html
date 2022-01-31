@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mèo bắt chuột</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = true;
+            }
+
+            say(string) {
+                console.log(`${this.name}: ${string}`);
+            }
+        }
+
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+            }
+            
+            say(string) {
+                console.log(`${this.name}: ${string}`);
+            }
+
+            catches(Rat) {
+                if(this.speed > Rat.speed) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            eat(Rat) {
+                if(Rat.status == true) {
+                    this.weight += Rat.weight;
+                    Rat.status = false;
+                } else {
+                    console.log('Con này chết rồi');
+                }
+            }
+        }
+        
+        let jerry = new Rat('Jerry', 2, 10);
+        let tom = new Cat('Tom', 10, 15);
+
+        tom.say('hihi');
+        console.log(tom.weight);
+        console.log(jerry.status)
+        // KiểM tra xem mèo có bắt được chuột chưa, nếU bắt đƯợc thì ăn luôn
+        if(tom.catches(jerry)) {
+            tom.say('Ngươi đã bị bắt');
+            tom.eat(jerry);
+            console.log(tom.weight);
+            console.log(jerry.status)
+        } else {
+            jerry.say('Đố anh bắt được em');
+        }
+
+        // Thử ăn chuột khi con chuột đó đã chếT
+        if(tom.catches(jerry)) {
+            tom.say('Ngươi đã bị bắt');
+            tom.eat(jerry);
+            console.log(tom.weight);
+            console.log(jerry.status)
+        } else {
+            jerry.say('Đố anh bắt được em');
+        }
+    </script>
+</body>
+</html>

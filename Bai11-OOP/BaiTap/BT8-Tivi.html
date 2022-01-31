@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều khiển Tivi</title>
+</head>
+<body>
+    <script>
+        class Remote {
+            constructor(id) {
+                this.id = id;
+            }
+            connectToTV(tivi) {
+                this.tivi = tivi;
+            }
+            changeChannel(channel) {
+                this.tivi.channel = channel;
+            }
+
+            turnOn() {
+                this.tivi.status = 'on';
+            }
+            turnOff() {
+                this.tivi.status = 'off';
+            }
+        }
+
+        class Tivi {
+            constructor() {
+                this.channel = 1;
+                this.volume = 10;
+                this.status = 'off';
+            }
+
+            changeChannelTV(channel) {
+                this.channel = channel;
+            }
+
+            changeVolume(string) {
+                if(string == 'up') {
+                    this.volume ++;
+                } else if(string == 'down') {
+                    this.volume --;
+                }
+            }
+        }
+
+        let remote = new Remote('RM01');
+        let tivi = new Tivi();
+        // KếT nối remote với TV
+        remote.connectToTV(tivi);
+        // Bật TIVI
+        remote.turnOn();
+        // ChuyểN kênh bằng TV
+        tivi.changeChannelTV(7);
+        console.log(tivi.channel);
+        // Chuyển kênh bằng remote
+        remote.changeChannel(3);
+        console.log(tivi.channel);
+        // Tăng âm lượng lên 2 đƠn vị
+        tivi.changeVolume('up');
+        tivi.changeVolume('up');
+        console.log(tivi.volume); 
+        // Dùng remote tắt tivi
+        remote.turnOff();
+        console.log(tivi.status);
+        </script>
+</body>
+</html>

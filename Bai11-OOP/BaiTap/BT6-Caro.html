@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cờ caro</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      tr,
+      td {
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="start()">Bắt đầu</button>
+    <button onclick="reset()">Làm mới</button>
+    <button onclick="undo()">Lùi lại</button> -->
+    <table id="game-board"></table>
+
+    Điểm
+    <p id="player1">Player 1: 0</p>
+    <p id="player2">Player 2: 0</p>
+    <script>
+      let CELLS = 10;
+      let COLUMS = 10;
+      let arr = [];
+      function drawGame(arr) {
+        let htmls = ``;
+        for (let i = 0; i < CELLS; i++) {
+          arr[i] = [];
+          htmls += `<tr>`;
+          for (let j = 0; j < COLUMS; j++) {
+            arr[i][j] = "*";
+            htmls += `<td id = "cell-${i}-${j}" onclick="play(${i}, ${j})"></td>`;
+          }
+          htmls += `</tr>`;
+        }
+        document.getElementById("game-board").innerHTML = htmls;
+      }
+      drawGame(arr);
+      class Player {
+          constructor(player) {
+            this.player = player;
+          }
+          play(i, j, player) {
+            let input = document.getElementById(`cell-${i}-${j}`);
+                if(player == 1) {
+                    input.innerHTML = "X";
+                    input.style.color = 'blue';
+                    arr[i][j] = "X";
+                    player = 2;
+                } else {
+                    input.innerHTML = "O";
+                    input.style.color = 'red';
+                    arr[i][j] = "O";
+                    player = 1;
+                }
+          }
+      }
+    </script>
+  </body>
+</html>
